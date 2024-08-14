@@ -28,26 +28,34 @@ function Bookshelf() {
       <div className="formDiv">
         <h3>Add a Book</h3>
         <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="title"
-            value={newBook.title}
-            onChange={handleInputChange}
-            placeholder="Book Title"
-          />
-          <input
-            type="text"
-            name="author"
-            value={newBook.author}
-            onChange={handleInputChange}
-            placeholder="Author"
-          />
+          <label>
+            Title:
+            <input
+              type="text"
+              name="title"
+              value={newBook.title}
+              onChange={handleInputChange}
+              placeholder="Book Title"
+            />
+          </label>
+          <br />
+          <label>
+            Author:
+            <input
+              type="text"
+              name="author"
+              value={newBook.author}
+              onChange={handleInputChange}
+              placeholder="Author"
+            />
+          </label>
+          <br />
           <button type="submit">Add Book</button>
         </form>
       </div>
       <div className="bookCardsDiv">
         {books.map((book, index) => (
-          <div key={index}>
+          <div key={index} className="bookCard">
             <h4>{book.title}</h4>
             <p>{book.author}</p>
           </div>
